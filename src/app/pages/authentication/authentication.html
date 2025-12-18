@@ -2,7 +2,8 @@
          <h2>SignIn</h2>
          <p>Favor Autentique para continuar </p>
          <button (click)="this.signinForms.reset()" classe="clean-button">Limpar Campos</button>
-         <form [formGroup]="this.signinForms">
+
+         <form [formGroup]="this.signinForms" (ngSubmit)="onSubmit()">
 
             <label for='email'>Email</label>
             <input type="email" id="email" placeholder="Digite seu email" formControlName="email">
@@ -12,8 +13,8 @@
 
             <!--Botões-->
             <div class="button-group">
-               <button class="go-back">Voltar</button>
-               <button class="sign-in">SignIn</button>
+               <button type="button" class="go-back">Voltar</button>
+               <button type="submit" class="sign-in">SignIn</button>
 
             </div>
 

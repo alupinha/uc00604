@@ -9,6 +9,9 @@ import { ReactiveFormsModule, UntypedFormBuilder, UntypedFormGroup } from '@angu
   styleUrl: './authentication.css',
 })
 export class Authentication {
+onSubmit() {
+throw new Error('Method not implemented.');
+}
 
    protected signinForms!: UntypedFormGroup;
 
@@ -24,3 +27,5 @@ export class Authentication {
    }
 
 }
+
+
