@@ -9,9 +9,7 @@ import { ReactiveFormsModule, UntypedFormBuilder, UntypedFormGroup } from '@angu
   styleUrl: './authentication.css',
 })
 export class Authentication {
-onSubmit() {
-throw new Error('Method not implemented.');
-}
+
 
    protected signinForms!: UntypedFormGroup;
 
@@ -25,6 +23,10 @@ throw new Error('Method not implemented.');
      console.log('meu form', this.signinForms.value)
 
    }
+
+onSubmit() {
+console.log("Meu Forms", this.signinForms.value);
+}
 
 }
 

@@ -110,7 +110,7 @@ button {
 }
 
 .go-back {
-  background-color: var(--background-color-sections2);
+  background-color: rgb(237, 10, 237);
   color: var(--text-color);
 }
 
@@ -125,7 +125,7 @@ button {
 }
 
 .google-btn:hover {
-  background-color: var(--color-button-google-hover);
+  background-color: rgb(227, 227, 18);
 }
 
 .google-btn img {
