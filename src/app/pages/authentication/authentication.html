@@ -5,9 +5,21 @@
 
          <form [formGroup]="this.signinForms" (ngSubmit)="onSubmit()">
 
+            <!--Input do email-->
             <label for='email'>Email</label>
             <input type="email" id="email" placeholder="Digite seu email" formControlName="email">
+            @if (this.signinForms.invalid && this.signinForms.get("email")?.touched) {
+                <div class="error-message">
+                    <small>Campo Obrigatório</small>
+                </div>
 
+
+
+            }
+
+
+
+            <!--Input do password-->
             <label for='password'>Password</label>
             <input type="password" id="password" placeholder="Digite sua senha" formControlName="password">
 
@@ -21,9 +33,6 @@
 
             <!--fim do form-->
          </form>
-
-
-
 </div>
 
 
