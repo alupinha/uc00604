@@ -15,8 +15,8 @@ export class Authentication {
 
    constructor(private fb: UntypedFormBuilder) {
        this.signinForms = this.fb.nonNullable.group({
-         email: ['', [Validators.required]],
-         password:['', [Validators.required]]
+         email: ['', [Validators.required, Validators.email]],
+         password:['', [Validators.required, Validators.minLength(3), Validators.maxLength(10)]]
        });
 
 

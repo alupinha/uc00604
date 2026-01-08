@@ -9,19 +9,40 @@
             <label for='email'>Email</label>
             <input type="email" id="email" placeholder="Digite seu email" formControlName="email">
             @if (this.signinForms.invalid && this.signinForms.get("email")?.touched) {
-                <div class="error-message">
+
+              @if (this.signinForms.hasError('required', 'email')){
+                    <div class="error-message">
                     <small>Campo Obrigatório</small>
                 </div>
-
-
-
             }
-
-
+              @if (this.signinForms.getError('email', 'email')) {
+                    <div class="error-message">
+                    <small>Erro no padrão do email</small>
+                </div>
+              }
+              }
 
             <!--Input do password-->
             <label for='password'>Password</label>
             <input type="password" id="password" placeholder="Digite sua senha" formControlName="password">
+            @if (!this.signinForms.valid && this.signinForms.get("password")?.touched){
+
+            @if (this.signinForms.get('password')?.getError('required')){
+              <div class="error-message">
+                <small>Campo Obrigatório </small>
+              </div>
+              }
+            @if (this.signinForms.hasError("minlength", "password")) {
+                <div class="error-message">
+                <small>Campo tem que ter no mínimo 3 caracteres</small>
+              </div>
+              }
+            @if (this.signinForms.get("password")?.getError("maxlength")){
+                <div class="error-message">
+                <small>Campo tem que ter no mínimo 10 caracteres</small>
+              </div>
+              }
+            }
 
             <!--Botões-->
             <div class="button-group">
